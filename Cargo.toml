@@ -1,5 +1,5 @@
 [package]
-name = "diy-encryption-rust"
+name = "scratch-encryption-rust"
 version = "0.1.0"
 edition = "2024"
 
