@@ -1,16 +1,14 @@
-use sha2::{ Digest, Sha256 };
+use sha2::{ Sha256, Digest };
 
 fn main() {
-    let input = "hello world";
+    hash("hello world");
+}
 
+fn hash(input: &str) {
     let mut hasher = Sha256::new();
 
     hasher.update(input.as_bytes());
+    let manual_result = hasher.finalize();
 
-    let result = hasher.finalize();
-
-    let hash_string = format!("{:x}", result);
-
-    println!("SHA-256: {}", hash_string);
-    // Output: b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9
+    println!("Manual Hash:  {:x}\n", manual_result);
 }
